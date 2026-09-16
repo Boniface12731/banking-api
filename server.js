@@ -3,7 +3,8 @@ const cors = require("cors");
 const transferRoutes = require("./src/routes/transferRoutes");
 const transactionRoutes = require("./src/routes/transactionRoutes");
 const authRoutes = require("./src/routes/authRoutes");
- 
+const accountRoutes = require("./src/routes/accountRoutes") 
+
 const app = express();
 
 app.use(cors());
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/transfers", transferRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/accounts", accountRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
