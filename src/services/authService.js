@@ -1,6 +1,9 @@
 const users = require("../data/users");
 
 const login = (username, password) => {
+    console.log("Received password type:", typeof password);
+    console.log("Stored password type:", typeof users[0].password);
+
     const user = users.find(
         user =>
             user.username === username &&

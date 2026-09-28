@@ -1,19 +1,28 @@
 const transferService = require("../services/transferService");
 
-const createTransfer = (req, res) => {
-    const {
-        fromAccount,
-        toAccount,
-        amount
-    } = req.body;
+const createTransfer = async (req, res) => {
+    try {
+        const {
+            fromAccount,
+            toAccount,
+            amount
+        } = req.body;
 
-    const result = transferService.transferMoney(
-        fromAccount,
-        toAccount,
-        amount
-    );
+        const result = await transferService.transferMoney(
+            fromAccount,
+            toAccount,
+            amount
+        );
 
-    res.status(result.statusCode).json(result);
+        res.status(result.statusCode).json(result);
+
+    } catch (error) {
+        console.error("Transfer controller error:", error.message);
+        res.status(500).json({
+            success: false,
+            message: "Transfer failed. Please try again."
+        });
+    }
 };
 
 module.exports = {
