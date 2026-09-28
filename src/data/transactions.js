@@ -1,6 +1,7 @@
 const transactions = [
     {
         id: "TXN001",
+        accountNumber: "123456789",
         type: "DEBIT",
         description: "M-Pesa Payment",
         amount: 1500,
@@ -9,6 +10,7 @@ const transactions = [
     },
     {
         id: "TXN002",
+        accountNumber: "123456789",
         type: "CREDIT",
         description: "Salary",
         amount: 85000,
@@ -17,6 +19,7 @@ const transactions = [
     },
     {
         id: "TXN003",
+        accountNumber: "123456789",
         type: "DEBIT",
         description: "Supermarket Purchase",
         amount: 4500,
@@ -25,6 +28,7 @@ const transactions = [
     },
     {
         id: "TXN004",
+        accountNumber: "123456789",
         type: "DEBIT",
         description: "Electricity Token",
         amount: 2000,
@@ -32,5 +36,4 @@ const transactions = [
         status: "SUCCESS"
     }
 ];
-
 module.exports = transactions;
